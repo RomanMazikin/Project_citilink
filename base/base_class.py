@@ -11,6 +11,6 @@ class Base:
         action = ActionChains(self.driver)
         action.move_to_element(path).perform()
 
-    def assert_page_word(self, page_word, fact_word):
-        assert page_word == fact_word
-        print("right page word")
+    def assert_value(self, value1, value2):
+        assert value1 == value2
+        print("right value")
