@@ -1,11 +1,13 @@
 import time
 
+import allure
 from selenium.common import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class SmartphonesPage(Base):
@@ -77,18 +79,21 @@ class SmartphonesPage(Base):
     # Methods
 
     def select_poco_x5pro(self):
-        self.click_button_cookie()
-        self.scroll_to(self.get_checkbox_xiaomi())
-        self.click_checkbox_xiaomi()
-        self.scroll_to(self.get_checkbox_128gb())
-        self.click_checkbox_128gb()
-        self.scroll_to(self.get_filter_battery())
-        self.click_filter_battery()
-        self.click_checkbox_filter_battery_5000()
-        self.scroll_to(self.get_button_add_to_cart())
-        self.click_button_add_to_cart()
-        try:
-            self.click_button_go_to_cart()
-        except TimeoutException:
-            pass
+        with allure.step("confirmation_order"):
+            Logger.add_start_step(method="select_poco_x5pro")
+            self.click_button_cookie()
+            self.scroll_to(self.get_checkbox_xiaomi())
+            self.click_checkbox_xiaomi()
+            self.scroll_to(self.get_checkbox_128gb())
+            self.click_checkbox_128gb()
+            self.scroll_to(self.get_filter_battery())
+            self.click_filter_battery()
+            self.click_checkbox_filter_battery_5000()
+            self.scroll_to(self.get_button_add_to_cart())
+            self.click_button_add_to_cart()
+            try:
+                self.click_button_go_to_cart()
+            except TimeoutException:
+                pass
+            Logger.add_end_step(url=self.driver.current_url, method="select_poco_x5pro")
 

@@ -4,8 +4,10 @@ from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.order_info_page import OrderInfo
 from pages.smartphones_page import SmartphonesPage
+import allure
 
 
+@allure.description("Test buy product")
 def test_buy_product(set_group):
 
     driver = webdriver.Chrome()

@@ -2,8 +2,9 @@ import time
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-
+import  allure
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class LoginPage(Base):
@@ -53,10 +54,13 @@ class LoginPage(Base):
     # Methods
 
     def authorisation(self):
-        self.driver.get("https://www.citilink.ru/")
-        self.driver.maximize_window()
-        self.click_account_button()
-        self.input_user_email("testqa2606@rambler.ru")
-        self.input_password("Qa26062023")
-        self.click_button_enter()
+        with allure.step("authorisation"):
+            Logger.add_start_step(method="authorisation")
+            self.driver.get("https://www.citilink.ru/")
+            self.driver.maximize_window()
+            self.click_account_button()
+            self.input_user_email("testqa2606@rambler.ru")
+            self.input_password("Qa26062023")
+            self.click_button_enter()
+            Logger.add_end_step(url=self.driver.current_url, method="authorisation")
 

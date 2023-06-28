@@ -1,11 +1,14 @@
 import time
 
+import allure
 from selenium.common import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 from base.base_class import Base
+from utilities.logger import Logger
+
 
 class CartPage(Base):
     def __init__(self, driver):
@@ -79,16 +82,19 @@ class CartPage(Base):
     # Methods
 
     def checkout(self):
-        self.assert_value("Корзина", self.value_page_word())
-        name = self.value_name_product()
-        price = self.value_price_product()
-        self.click_button_checkout()
-        try:
-            self.click_button_continue_checkout()
-        except TimeoutException:
-            pass
-        self.assert_value(name, self.value_final_name_product())
-        self.assert_value(price, self.value_final_price())
+        with allure.step("checkout"):
+            Logger.add_start_step(method="checkout")
+            self.assert_value("Корзина", self.value_page_word())
+            name = self.value_name_product()
+            price = self.value_price_product()
+            self.click_button_checkout()
+            try:
+                self.click_button_continue_checkout()
+            except TimeoutException:
+                pass
+            self.assert_value(name, self.value_final_name_product())
+            self.assert_value(price, self.value_final_price())
+            Logger.add_end_step(url=self.driver.current_url, method="checkout")
 
 
 

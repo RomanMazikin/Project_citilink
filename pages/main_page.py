@@ -1,9 +1,12 @@
 import time
+
+import allure
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class MainPage(Base):
@@ -36,7 +39,8 @@ class MainPage(Base):
     # Methods
 
     def select_category_smartphones(self):
-        # self.driver.get("https://www.citilink.ru/")
-        # self.driver.maximize_window()
-        self.click_catalog_menu()
-        self.click_category_smartphones()
+        with allure.step("select_category_smartphones"):
+            Logger.add_start_step(method="select_category_smartphones")
+            self.click_catalog_menu()
+            self.click_category_smartphones()
+            Logger.add_end_step(url=self.driver.current_url, method="select_category_smartphones")

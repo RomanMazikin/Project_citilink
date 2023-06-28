@@ -1,10 +1,12 @@
 import time
 
+import allure
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
 from pages.cart_page import CartPage
+from utilities.logger import Logger
 
 
 class OrderInfo(Base):
@@ -53,12 +55,15 @@ class OrderInfo(Base):
     # Methods
 
     def confirmation_order(self):
-        self.clear_fist_name()
-        self.clear_last_name()
-        self.input_fist_name()
-        self.input_last_name()
-        self.scroll_to(self.get_button_submit_order())
-        # self.click_button_submit_order()  закомментировал чтобы не оформился заказ
-        time.sleep(1)
+        with allure.step("confirmation_order"):
+            Logger.add_start_step(method="confirmation_order")
+            self.clear_fist_name()
+            self.clear_last_name()
+            self.input_fist_name()
+            self.input_last_name()
+            self.scroll_to(self.get_button_submit_order())
+            # self.click_button_submit_order()  закомментировал чтобы не оформился заказ
+            Logger.add_end_step(url=self.driver.current_url, method="confirmation_order")
+            time.sleep(1)
 
 
