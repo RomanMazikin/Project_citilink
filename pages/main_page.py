@@ -36,7 +36,7 @@ class MainPage(Base):
     # Methods
 
     def select_category_smartphones(self):
-        self.driver.get("https://www.citilink.ru/")
-        self.driver.maximize_window()
+        # self.driver.get("https://www.citilink.ru/")
+        # self.driver.maximize_window()
         self.click_catalog_menu()
         self.click_category_smartphones()

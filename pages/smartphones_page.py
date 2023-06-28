@@ -64,6 +64,7 @@ class SmartphonesPage(Base):
     def click_checkbox_filter_battery_5000(self):
         self.get_checkbox_filter_battery_5000().click()
         print("click checkbox battery 5000")
+        time.sleep(1)
 
     def click_button_add_to_cart(self):
         self.get_button_add_to_cart().click()
