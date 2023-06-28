@@ -50,16 +50,6 @@ class OrderInfo(Base):
         self.get_button_submit_order().click()
         print("Thank you for your order")
 
-    def value_final_name_product(self):
-        name1 = self.get_final_name_product().text
-        print("value name product")
-        return name1
-    #
-    def value_final_price(self):
-        price1 = self.get_final_price().text
-        print("value name product")
-        return price1
-
     # Methods
 
     def confirmation_order(self):

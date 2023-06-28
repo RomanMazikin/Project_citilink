@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="015f770c-bc56-4675-8f93-9ba99cba8cca" name="Changes" comment="project citilink">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/cart_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/cart_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/main_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/order_info_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/order_info_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/smartphones_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/smartphones_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_buy_product.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_buy_product.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +80,15 @@
       <option name="project" value="LOCAL" />
       <updated>1687889643150</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="project citilink">
+      <option name="closed" value="true" />
+      <created>1687940401607</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687940401607</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
