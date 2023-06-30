@@ -1,19 +1,14 @@
 import time
-
 import allure
 from selenium.common import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-
 from base.base_class import Base
 from utilities.logger import Logger
 
 
 class SmartphonesPage(Base):
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
 
     # Locators
     checkbox_xiaomi = '//input[@id="xiaomi"]'

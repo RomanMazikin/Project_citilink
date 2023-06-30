@@ -1,4 +1,3 @@
-import time
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -8,9 +7,6 @@ from utilities.logger import Logger
 
 
 class LoginPage(Base):
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
 
     # Locators
     account_button = '//div[@class="css-1wyvf5z eyoh4ac0"]'
